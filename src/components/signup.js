@@ -1,15 +1,15 @@
-import React, { useRef, useState, useEffect} from "react";
+import React, { useRef, useState} from "react";
 import { useUserContext } from "../context/useContext";
 import {
-  collection,
-  query,
-  onSnapshot,
+//   collection,
+//   query,
+//   onSnapshot,
   // doc,
   // updateDoc,
   // deleteDoc,
   // setDoc
 } from "firebase/firestore";
-import { db } from "../firebase";
+// import { db } from "../firebase";
 
 const Signup = (props) => {
   const emailRef = useRef();
