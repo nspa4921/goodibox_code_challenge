@@ -16,21 +16,21 @@ const Signup = (props) => {
   const nameRef = useRef();
   const psdRef = useRef();
   const countryRef = useRef();
-  const [ages, setAges] = useState([]);
+//   const [ages, setAges] = useState([]);
   const [age, setAge] = useState("");
 
 
-  useEffect(() => {
-    const q = query(collection(db, "age"));
-    const unsub = onSnapshot(q, (querySnapshot) => {
-      let agesArray = [];
-      querySnapshot.forEach((doc) => {
-        agesArray.push({ ...doc.data(), id: doc.id });
-      });
-      setAges(agesArray);
-    });
-    return () => unsub();
-  }, []);
+//   useEffect(() => {
+//     const q = query(collection(db, "age"));
+//     const unsub = onSnapshot(q, (querySnapshot) => {
+//       let agesArray = [];
+//       querySnapshot.forEach((doc) => {
+//         agesArray.push({ ...doc.data(), id: doc.id });
+//       });
+//       setAges(agesArray);
+//     });
+//     return () => unsub();
+//   }, []);
 
   const { registerUser } = useUserContext();
 
