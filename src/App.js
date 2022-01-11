@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import Auth from "./components/auth";
+import Dashboard from "./components/dashboard";
+import { useUserContext } from "./context/useContext";
+import goodieLogo from "./assets/images/favpng_goodiebox-aps-a-z-index-term-gift-Ønskeliste.png";
+
 
 function App() {
+  const { user, loading, error } = useUserContext();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img alt="goodielogo" style={{width: 300, height: 300, position: 'absolute', marginLeft: 400}} src={goodieLogo} />
+      {error && <p className="error">{error}</p>}
+      {loading ? <h2>Loading...</h2> : <> {user ? <Dashboard /> : <Auth />} </>}
     </div>
   );
 }
